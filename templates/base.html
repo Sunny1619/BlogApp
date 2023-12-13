@@ -1,29 +1,31 @@
 {% load static %}
 <html>
-<head>
-<title>Django blog</title>
-<link href="{% static 'css/base.css' %}" rel="stylesheet" >
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"
-rel="stylesheet">
-</head>
-<body>
-<header>
-<h1><a href="{% url 'blog' %}">Django blog</a></h1>
-<div class="nav-right">
-    <a href="{% url 'post_new' %}">+ New Blog Post</a>
-    </div>
-</header>
-{%if user.is_authenticated%}
-<p>Hi {{user.username}} !</p>
-<p><a href="{%url 'logout'%}">Log Out</a></p>
-{%else%}
-<p>You Are Not Logged In</p>
-<a href="{%url 'login'%}">Log In</a>
-{%endif%}
-<p><a href="{%url 'signup'%}">Sign Up</a></p>
-<div>
-{% block content %}
-{% endblock content %}
-</div>
-</body>
+    <head>
+        <link href="{% static 'css/web.css' %}" rel="stylesheet" >
+    </head>
+    <body>
+        <img src="{%static 'images/logo.png'%}" class="logo small" />
+        <nav>
+            <ul>
+                <li><a href="{% url 'blog' %}">HOME</a></li>
+                <li><a href="{% url 'post_new' %}">NEW BLOG</a></li>
+                <li><a href="{%url 'signup'%}">SIGN UP</a></li>
+                {%if user.is_authenticated%}
+                <li><a href="{%url 'logout'%}">LOG OUT</a></li>
+                {%else%}
+                <li><a href="{%url 'login'%}">LOGIN</a></li>
+                {%endif%}
+                <li><a href="{%url 'about'%}">ABOUT</a></li>
+            </ul>
+        </nav>
+        {%if user.is_authenticated%}
+        <h3 class="user">Hi {{user.username}} !</h3>
+        {%else%}
+        <h3 class="user">You Are Not Logged In</h3>
+        {%endif%}
+        <div class="view">
+            {% block content %}
+            {% endblock content%}
+        </div>
+    </body>
 </html>

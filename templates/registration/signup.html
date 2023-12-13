@@ -1,11 +1,28 @@
 {%extends 'base.html'%}
 
 {%block content%}
-
-<h2>Sign Up</h2>
+<h2 class="signup" style="font-family: sans-serif; text-align: center;">Sign Up</h2>
 <form action="" method="post">{%csrf_token%}
-    {{form.as_p}}
-    <button type="submit">Sign Up</button>
+    <div class="signup" style="font-family: sans-serif; text-align: center;">
+    <p><label>Username : </label>
+    {{form.username}}</p>
+    <p><label>Password :</label>
+       {{form.password1}}</p>
+    <p style="margin-right: 50px;">
+        <label>Confirm Password</label>
+        {{form.password2}}
+    </p>
+</div>
+    <button type="submit" class="inputg" style="background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);">Sign Up</button>
 
 </form>
 
