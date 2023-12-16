@@ -1,1 +1,3 @@
-src/main/resources/staticfiles/* linguist-vendored
+*.html linguist-detectable=true
+*.py linguist-detectable=false
+*.css linguist-detectable=false
