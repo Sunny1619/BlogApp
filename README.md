@@ -10,5 +10,6 @@
 * HTML And CSS Used To Design The Site.
 * Class Based Views Is Used To Implement The Features.
 * SQLite Is Used For DataBase.
+* WhiteNoise Is Used To Collect The Staticfiles For Making Them Production Ready.
 * App Is Ready To Deploy On Heroku.
 
